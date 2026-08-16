@@ -151,6 +151,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    height: 100%;
     text-align: center;
     gap: 16px;
     transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
@@ -169,7 +171,19 @@ body {
     background-color: #f0f0f0;
     flex-shrink: 0;
     margin-bottom: 8px;
+    border: 4px solid #ffffff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
+
+/* Align and frame the other 5 photos to match TharunKumar K's headroom and positioning */
+img[src="/images/Abirubha.jpeg"],
+img[src="/images/RamKishore.jpeg"],
+img[src="/images/SanthoshKumar.jpeg"],
+img[src="/images/Elakkiyaa%20V.jpeg"],
+img[src="/images/Subhasri.jpeg"] {
+    object-position: top;
+}
+
 
 .member-name {
     font-size: 1.1rem;
