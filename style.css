@@ -1,0 +1,391 @@
+/* Base Reset and Typography */
+:root {
+    --bg-color: #fafafa;
+    --text-primary: #111111;
+    --text-secondary: #555555;
+    --text-light: #777777;
+    --border-color: #eaeaea;
+    --card-bg: #ffffff;
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 12px 28px rgba(0, 0, 0, 0.06);
+    --transition-speed: 0.3s;
+    --font-family: 'Inter', sans-serif;
+    --logo-to-heading: 12px;
+    --heading-to-subtitle: 14px;
+    --subtitle-to-cards: 40px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Background Patterns */
+.bg-decor {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.4;
+    pointer-events: none;
+}
+.bg-decor.top-left {
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 400px;
+    background: url('data:image/svg+xml;utf8,<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg"><path d="M0,50 Q100,100 200,50 T400,50" fill="none" stroke="%23d0d0d0" stroke-width="1"/><path d="M0,70 Q100,120 200,70 T400,70" fill="none" stroke="%23d0d0d0" stroke-width="1"/><path d="M0,90 Q100,140 200,90 T400,90" fill="none" stroke="%23d0d0d0" stroke-width="1"/><path d="M0,110 Q100,160 200,110 T400,110" fill="none" stroke="%23d0d0d0" stroke-width="1"/></svg>') no-repeat top left;
+}
+.bg-decor.bottom-right {
+    bottom: 0;
+    right: 0;
+    width: 400px;
+    height: 400px;
+    background: url('data:image/svg+xml;utf8,<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg"><path d="M-100,200 Q0,250 100,200 T300,200" fill="none" stroke="%23d0d0d0" stroke-width="1"/><path d="M-100,220 Q0,270 100,220 T300,220" fill="none" stroke="%23d0d0d0" stroke-width="1"/><path d="M-100,240 Q0,290 100,240 T300,240" fill="none" stroke="%23d0d0d0" stroke-width="1"/><path d="M-100,260 Q0,310 100,260 T300,260" fill="none" stroke="%23d0d0d0" stroke-width="1"/></svg>') no-repeat bottom right;
+}
+.dot-grid {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-image: radial-gradient(#cccccc 2px, transparent 2px);
+    background-size: 20px 20px;
+    z-index: -1;
+}
+.dot-grid.top-left-dots {
+    top: 100px;
+    left: 80px;
+}
+.dot-grid.top-right-dots {
+    top: 40px;
+    right: 80px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--subtitle-to-cards);
+}
+
+/* Header Section */
+.header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.logo-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--logo-to-heading);
+}
+
+.tech-squad-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+
+
+.heading {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: var(--heading-to-subtitle);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.heading .light-text {
+    color: #666666;
+}
+
+.divider-wrapper {
+    display: none;
+}
+
+.divider-line {
+    height: 1px;
+    width: 60px;
+    background-color: #cccccc;
+}
+
+.header-icon {
+    display: none;
+}
+
+.subtext {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Team Grid */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Team Card */
+.team-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.team-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.profile-img {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #f0f0f0;
+    flex-shrink: 0;
+    margin-bottom: 8px;
+}
+
+.member-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0;
+    line-height: 1.2;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+}
+
+.member-role {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    gap: 6px;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+    min-height: 40px;
+}
+
+.role-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.short-divider {
+    height: 2px;
+    width: 24px;
+    background-color: #222222;
+    margin: 0 auto 20px;
+}
+
+.member-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 16px;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.social-links {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid #dddddd;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all var(--transition-speed) ease;
+}
+
+.social-btn i,
+.social-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.social-btn:hover {
+    background-color: #f0f0f0;
+    border-color: #bbbbbb;
+}
+
+/* Footer Section */
+.footer-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px 40px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 10px;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.rocket-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px dashed #aaaaaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+}
+
+.rocket-wrapper i {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.footer-text strong {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.footer-prompt {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.pill-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--text-primary);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all var(--transition-speed) ease;
+}
+
+.pill-btn:hover {
+    background-color: var(--text-primary);
+    color: var(--bg-color);
+}
+
+.btn-icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 1100px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-card {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .footer-right {
+        align-items: center;
+    }
+    
+    .heading {
+        font-size: 2.25rem;
+    }
+    
+    .team-card {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bg-decor, .dot-grid {
+        display: none;
+    }
+    
+    .container {
+        padding: 40px 16px;
+    }
+    
+    .profile-img {
+        width: 130px;
+        height: 130px;
+    }
+}
