@@ -5,7 +5,7 @@ const teamMembers = [
     {
         name: "TharunKumar K",
         role: "Team Lead & Full Stack Developer",
-        photoUrl: "/images/Tharunkumar.jpeg", 
+        photoUrl: "/images/TharunKumar.jpeg", 
         description: "Leading the project architecture and developing core academic task workflows, dashboards, and full-stack features.",
         linkedinUrl: "https://www.linkedin.com/in/tharunkumark4743/",
         githubUrl: "https://github.com/Tharun4743"
@@ -37,7 +37,7 @@ const teamMembers = [
     {
         name: "Elakkiyaa V",
         role: "QA & Reporting Engineer",
-        photoUrl: "/images/Elakkiyaa V.jpeg",
+        photoUrl: "/images/Elakkiyaa%20V.jpeg",
         description: "Validating system workflows and developing reliable institutional reports, coding reports, and department analytics.",
         linkedinUrl: "https://www.linkedin.com/in/elakkiyaa-viswanathan-357356387/",
         githubUrl: "https://github.com/Elakkiyaa55197"
