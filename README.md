@@ -1,4 +1,5 @@
-# Team Portfolio
+# TeamPortfolio-Techsquadsih
+
 
 A clean, responsive, and professional team portfolio webpage designed to showcase team members, their roles, and their social links. Originally built with vanilla HTML/CSS/JS, this project is now powered by **Vite** for a modern, lightning-fast development experience.
 
